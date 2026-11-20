@@ -39,6 +39,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #f6c492;outline-offset:3p
 .season{font:inherit;cursor:pointer;min-height:48px;padding:10px 24px;border-radius:999px;border:1px solid rgba(241,232,214,.3);background:transparent;color:#f1e8d6}
 .season[aria-pressed="true"]{font-weight:700;border-color:#f2902f;background:#f2902f;color:#1a1408}
 dialog::backdrop{background:rgba(5,8,22,.82)}
+.shot,.play{transition:transform .15s ease}#trailer-play:hover .play{transform:scale(1.07)}
 .shot{transition:transform .15s ease}.shot:hover{transform:translateY(-3px)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.hop,.glow{animation:none}.shot{transition:none}}
 </style>
@@ -77,7 +78,7 @@ Watch the trailer</a>
 <p style="margin: 0; color: #aab0c2; font-size: 16px">No account, nothing to install. Works on desktop and phone.</p>
 </div>
 <div style="flex: 1 1 420px; min-width: 0">
-<img src="assets/hero.jpg" alt="A red shiba in a blue scarf sits on a hill under the full moon. A speech bubble says Boop!" style="display: block; width: 100%; height: auto; aspect-ratio: 870 / 690; object-fit: cover; border-radius: 24px; border: 1px solid rgba(241,232,214,.16); box-shadow: 0 30px 80px rgba(5,8,22,.6)">
+<img src="assets/hero.jpg" alt="A red shiba in a blue scarf sits on a hill under the full moon, a village far below" style="display: block; width: 100%; height: auto; aspect-ratio: 1320 / 1046; object-fit: cover; border-radius: 24px; border: 1px solid rgba(241,232,214,.16); box-shadow: 0 30px 80px rgba(5,8,22,.6)">
 </div>
 </section>
 
@@ -119,9 +120,9 @@ Watch the trailer</a>
 <section id="year" style="background: #1b2440; border-top: 1px solid rgba(241,232,214,.16); border-bottom: 1px solid rgba(241,232,214,.16)">
 <div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
 <h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">One year in a tiny mountain village</h2>
-<p style="margin: 0; color: #ddd6c6; max-width: 40em">Every scene is a paper theatre: hand-drawn layers, lit and moved in 3D in your browser. These are straight from the game. Pick a season.</p>
+<p style="margin: 0; color: #ddd6c6; max-width: 40em">Every scene is a paper theatre: hand-drawn layers, lit and moved in 3D in your browser. Pick a season.</p>
 <div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(241,232,214,.16); background: #121831">
-<img loading="lazy" decoding="async" id="scene" src="assets/season-autumn.jpg" alt="Your shiba and Grandma Ume in Hinata Village on an autumn night, red lanterns overhead" width="1600" height="623" style="display: block; width: 100%; height: auto; aspect-ratio: 1600 / 623; object-fit: cover">
+<img loading="lazy" decoding="async" id="scene" src="assets/season-autumn.jpg" alt="Your shiba and Grandma Ume in Hinata Village on an autumn night, red lanterns overhead" width="2296" height="894" style="display: block; width: 100%; height: auto; aspect-ratio: 2296 / 894; object-fit: cover">
 <p id="scene-caption" aria-live="polite" style="position: absolute; right: 20px; bottom: 16px; margin: 0; background: #f1e8d6; color: #1d1714; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 18px; padding: 6px 16px; border-radius: 12px">The autumn moon festival</p>
 </div>
 <div id="seasons" role="group" aria-label="Season" style="display: flex; flex-wrap: wrap; gap: 12px">
@@ -270,11 +271,11 @@ Watch the trailer</a>
 </section><section id="trailer" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 32px">
 <h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Watch it in motion</h2>
 <div id="trailer-frame" style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(241,232,214,.16); aspect-ratio: 16 / 9; background: #0b1026">
-<a id="trailer-play" href="https://www.youtube.com/watch?v=Mu14LQlXHLg" aria-label="Watch the trailer on YouTube, 44 seconds" style="display: block; height: 100%">
-<img loading="lazy" decoding="async" src="assets/trailer-poster.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
-<span style="position: absolute; left: 32px; bottom: 32px; display: flex; align-items: center; gap: 14px; background: #f2902f; color: #1a1408; font-weight: 700; font-size: 20px; padding: 14px 26px; border-radius: 12px">
-<svg aria-hidden="true" width="16" height="18" viewBox="0 0 14 16"><path d="M1 1.5v13l12-6.5z" fill="#1a1408"></path></svg>
-Watch the trailer · 44s</span>
+<a id="trailer-play" href="https://www.youtube.com/watch?v=Mu14LQlXHLg" aria-label="Play the trailer, 44 seconds" style="display: grid; place-items: center; height: 100%; position: relative">
+<img loading="lazy" decoding="async" src="assets/trailer-poster.jpg" alt="" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover">
+<span class="play" style="position: relative; display: grid; place-items: center; width: clamp(84px, 11vw, 136px); aspect-ratio: 1; border-radius: 50%; background: #f2902f; box-shadow: 0 0 0 10px rgba(241,232,214,.22), 0 18px 50px rgba(5,8,22,.55)">
+<svg aria-hidden="true" viewBox="0 0 14 16" style="width: 38%; height: auto; margin-left: 8%"><path d="M1 1.5v13l12-6.5z" fill="#1a1408"></path></svg>
+</span>
 </a>
 </div>
 <div id="shots" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
@@ -389,9 +390,9 @@ Watch the trailer · 44s</span>
 (function () {
   var scenes = [
     ['assets/season-autumn.jpg', 'The autumn moon festival', 'Your shiba and Grandma Ume in Hinata Village on an autumn night, red lanterns overhead'],
-    ['assets/season-winter.jpg', 'New Year snow', 'Your shiba and two companions face Kurobane the crow tengu in the snowy village'],
-    ['assets/season-spring.jpg', 'Spring cherry blossom', 'The village square in cherry blossom season, with your shiba, two companions and Kurobane'],
-    ['assets/season-summer.jpg', 'The lanterns of Obon', 'The village on an Obon night, lanterns lit, your shiba and friends beside Kurobane']
+    ['assets/season-winter.jpg', 'New Year snow', 'Your shiba, Mochi and Kasumi with Kurobane the crow tengu in the snowy village'],
+    ['assets/season-spring.jpg', 'Spring cherry blossom', 'Your shiba and friends under the great cherry tree at dusk, Kurobane beside them'],
+    ['assets/season-summer.jpg', 'The summer star festival', 'Your shiba and friends beside a bamboo hung with paper wishes, the moon rabbit under a river of stars']
   ];
   var scene = document.getElementById('scene'), caption = document.getElementById('scene-caption');
   var buttons = document.querySelectorAll('#seasons .season');
