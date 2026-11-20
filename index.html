@@ -38,7 +38,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #f6c492;outline-offset:3p
 .glow{animation:glow 2.4s ease-in-out infinite}
 .season{font:inherit;cursor:pointer;min-height:48px;padding:10px 24px;border-radius:999px;border:1px solid rgba(241,232,214,.3);background:transparent;color:#f1e8d6}
 .season[aria-pressed="true"]{font-weight:700;border-color:#f2902f;background:#f2902f;color:#1a1408}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.hop,.glow{animation:none}}
+dialog::backdrop{background:rgba(5,8,22,.82)}
+.shot{transition:transform .15s ease}.shot:hover{transform:translateY(-3px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.hop,.glow{animation:none}.shot{transition:none}}
 </style>
 </head>
 <body>
@@ -104,7 +106,7 @@ Watch the trailer</a>
 <!-- Story -->
 <section id="story" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 64px">
 <div style="flex: 1.2 1 460px; min-width: 0">
-<img loading="lazy" decoding="async" src="assets/shot-grandma-ume.jpg" alt="Screenshot: Grandma Ume asks your shiba whether they heard the bell not ring, in Hinata Village at night" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 16px; border: 1px solid rgba(241,232,214,.16)">
+<img loading="lazy" decoding="async" src="assets/full-meet-mochi.jpg" alt="Screenshot: your shiba finds Mochi, a cream puppy, stuck in the forest, with three choices of what to do" width="1920" height="1080" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 16px; border: 1px solid rgba(241,232,214,.16)">
 </div>
 <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">One small shiba. One very big mountain.</h2>
@@ -117,10 +119,9 @@ Watch the trailer</a>
 <section id="year" style="background: #1b2440; border-top: 1px solid rgba(241,232,214,.16); border-bottom: 1px solid rgba(241,232,214,.16)">
 <div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
 <h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">One year in a tiny mountain village</h2>
-<p style="margin: 0; color: #ddd6c6; max-width: 40em">Every scene is a paper theatre: hand-drawn layers, lit and moved in 3D in your browser. Pick a season.</p>
+<p style="margin: 0; color: #ddd6c6; max-width: 40em">Every scene is a paper theatre: hand-drawn layers, lit and moved in 3D in your browser. These are straight from the game. Pick a season.</p>
 <div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(241,232,214,.16); background: #121831">
-<img loading="lazy" decoding="async" id="scene" src="assets/bg_village.webp" alt="Hinata Village on an autumn night: red lanterns, a full moon and fog under Mount Kasumi" width="960" height="432" style="display: block; width: 100%; height: auto; aspect-ratio: 960 / 432; object-fit: cover">
-<img loading="lazy" decoding="async" class="hop" src="assets/shiba-happy.svg" alt="" style="position: absolute; left: 24%; bottom: 0; height: 50%; width: auto">
+<img loading="lazy" decoding="async" id="scene" src="assets/season-autumn.jpg" alt="Your shiba and Grandma Ume in Hinata Village on an autumn night, red lanterns overhead" width="1600" height="623" style="display: block; width: 100%; height: auto; aspect-ratio: 1600 / 623; object-fit: cover">
 <p id="scene-caption" aria-live="polite" style="position: absolute; right: 20px; bottom: 16px; margin: 0; background: #f1e8d6; color: #1d1714; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 18px; padding: 6px 16px; border-radius: 12px">The autumn moon festival</p>
 </div>
 <div id="seasons" role="group" aria-label="Season" style="display: flex; flex-wrap: wrap; gap: 12px">
@@ -128,7 +129,6 @@ Watch the trailer</a>
 <button type="button" class="season" aria-pressed="false" data-i="1">Winter</button>
 <button type="button" class="season" aria-pressed="false" data-i="2">Spring</button>
 <button type="button" class="season" aria-pressed="false" data-i="3">Summer</button>
-<button type="button" class="season" aria-pressed="false" data-i="4">Obon</button>
 </div>
 </div>
 </section>
@@ -163,16 +163,16 @@ Watch the trailer</a>
 <p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Hot-spring fur. You can&#39;t be chilled while Saru is with you.</p>
 </article>
 <article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
-<img loading="lazy" decoding="async" src="assets/tanuki.svg" alt="Bunbuku, a tanuki in a straw hat" style="display: block; width: 100%; height: 170px; object-fit: contain">
-<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Bunbuku</h3>
-<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · Trickster</p>
-<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">A shape-shifter. The first attack aimed at you hits a decoy instead.</p>
+<img loading="lazy" decoding="async" src="assets/tanuki.svg" alt="A companion in silhouette" style="display: block; width: 100%; height: 170px; object-fit: contain; filter: brightness(0); opacity: .5">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">???</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Someone you&#39;ll meet further up the mountain.</p>
 </article>
 <article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
-<img loading="lazy" decoding="async" src="assets/otter.svg" alt="Nagi, an otter in a checked jacket" style="display: block; width: 100%; height: 170px; object-fit: contain">
-<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Nagi</h3>
-<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · River</p>
-<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">River eyes. Foes can&#39;t pinch your treats.</p>
+<img loading="lazy" decoding="async" src="assets/otter.svg" alt="A companion in silhouette" style="display: block; width: 100%; height: 170px; object-fit: contain; filter: brightness(0); opacity: .5">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">???</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Someone you&#39;ll meet on the road to Edo.</p>
 </article>
 <article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
 <img loading="lazy" decoding="async" src="assets/ponta.svg" alt="Ponta, a tanuki carrying a shop on his back" style="display: block; width: 100%; height: 170px; object-fit: contain">
@@ -271,17 +271,17 @@ Watch the trailer</a>
 <h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Watch it in motion</h2>
 <div id="trailer-frame" style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(241,232,214,.16); aspect-ratio: 16 / 9; background: #0b1026">
 <a id="trailer-play" href="https://www.youtube.com/watch?v=Mu14LQlXHLg" aria-label="Watch the trailer on YouTube, 44 seconds" style="display: block; height: 100%">
-<img loading="lazy" decoding="async" src="assets/canva-lantern.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<img loading="lazy" decoding="async" src="assets/trailer-poster.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <span style="position: absolute; left: 32px; bottom: 32px; display: flex; align-items: center; gap: 14px; background: #f2902f; color: #1a1408; font-weight: 700; font-size: 20px; padding: 14px 26px; border-radius: 12px">
 <svg aria-hidden="true" width="16" height="18" viewBox="0 0 14 16"><path d="M1 1.5v13l12-6.5z" fill="#1a1408"></path></svg>
 Watch the trailer · 44s</span>
 </a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
-<img loading="lazy" decoding="async" src="assets/shot-tanuki-bandit.jpg" alt="Screenshot: a tanuki bandit in a straw hat blocks the shrine steps" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
-<img loading="lazy" decoding="async" src="assets/shot-new-year-snow.jpg" alt="Screenshot: Kurobane the crow tengu in the snowy village at New Year" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
-<img loading="lazy" decoding="async" src="assets/shot-snow-fight.jpg" alt="Screenshot: a fight against a Whirlwind Weasel in a snowy pine forest" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
-<img loading="lazy" decoding="async" src="assets/shot-obon-festival.jpg" alt="Screenshot: the village at night during the Obon festival, lanterns strung overhead" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
+<div id="shots" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
+<a class="shot" href="assets/full-tanuki-bandit.jpg" aria-label="Open screenshot: A tanuki bandit in a straw hat blocks the shrine steps" style="display: block; border-radius: 12px; overflow: hidden; border: 1px solid rgba(241,232,214,.16)"><img loading="lazy" decoding="async" src="assets/thumb-tanuki-bandit.jpg" alt="Screenshot: A tanuki bandit in a straw hat blocks the shrine steps" width="640" height="360" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9"></a>
+<a class="shot" href="assets/full-snow-fight.jpg" aria-label="Open screenshot: A fight against a Whirlwind Weasel in a snowy pine forest" style="display: block; border-radius: 12px; overflow: hidden; border: 1px solid rgba(241,232,214,.16)"><img loading="lazy" decoding="async" src="assets/thumb-snow-fight.jpg" alt="Screenshot: A fight against a Whirlwind Weasel in a snowy pine forest" width="640" height="360" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9"></a>
+<a class="shot" href="assets/full-plum-grove.jpg" aria-label="Open screenshot: A giant hornet in the plum grove in full bloom" style="display: block; border-radius: 12px; overflow: hidden; border: 1px solid rgba(241,232,214,.16)"><img loading="lazy" decoding="async" src="assets/thumb-plum-grove.jpg" alt="Screenshot: A giant hornet in the plum grove in full bloom" width="640" height="360" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9"></a>
+<a class="shot" href="assets/full-level-up.jpg" aria-label="Open screenshot: Level up after a fight at the shrine gate" style="display: block; border-radius: 12px; overflow: hidden; border: 1px solid rgba(241,232,214,.16)"><img loading="lazy" decoding="async" src="assets/thumb-level-up.jpg" alt="Screenshot: Level up after a fight at the shrine gate" width="640" height="360" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9"></a>
 </div>
 </section>
 
@@ -370,6 +370,11 @@ Watch the trailer · 44s</span>
 </footer>
 
 </div>
+<dialog id="lightbox" aria-label="Screenshot" style="padding: 0; border: 1px solid rgba(241,232,214,.3); border-radius: 16px; background: #0b1026; max-width: min(96vw, 1600px); overflow: hidden">
+<img id="lightbox-img" src="" alt="" style="display: block; width: 100%; height: auto; max-height: 88vh; object-fit: contain">
+<form method="dialog" style="position: absolute; top: 12px; right: 12px; margin: 0"><button type="submit" aria-label="Close" style="font: inherit; font-family: 'Zen Maru Gothic', system-ui, sans-serif; font-weight: 700; cursor: pointer; min-height: 44px; padding: 8px 18px; border-radius: 999px; border: 0; background: #f1e8d6; color: #1d1714">Close</button></form>
+</dialog>
+
 <div id="consent" hidden role="region" aria-label="Analytics" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: #1b2440; border-top: 1px solid rgba(241,232,214,.3); color: #f1e8d6; font-family: 'Zen Maru Gothic', 'Trebuchet MS', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
 <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
 <p style="margin: 0; flex: 1 1 320px">Can we use Google Analytics to see how people find the game? Nothing loads unless you say yes. <a href="https://sheebpg.com/privacy.html#analytics" style="color: #f6c492">Privacy</a></p>
@@ -383,11 +388,10 @@ Watch the trailer · 44s</span>
 <script>
 (function () {
   var scenes = [
-    ['assets/bg_village.webp', 'The autumn moon festival', 'Hinata Village on an autumn night: red lanterns, a full moon and fog under Mount Kasumi'],
-    ['assets/bg_village_snow.webp', 'New Year snow', 'The village under falling snow, roofs white, the mountain capped'],
-    ['assets/bg_hanami.webp', 'Spring cherry blossom', 'A huge pink cherry tree on a green hill at dusk, petals drifting'],
-    ['assets/bg_star_river.webp', 'The summer star festival', 'A bamboo hung with paper wishes under a river of stars'],
-    ['assets/bg_obon.webp', 'The lanterns of Obon', 'The village at dusk with white lanterns overhead and welcome fires at every door']
+    ['assets/season-autumn.jpg', 'The autumn moon festival', 'Your shiba and Grandma Ume in Hinata Village on an autumn night, red lanterns overhead'],
+    ['assets/season-winter.jpg', 'New Year snow', 'Your shiba and two companions face Kurobane the crow tengu in the snowy village'],
+    ['assets/season-spring.jpg', 'Spring cherry blossom', 'The village square in cherry blossom season, with your shiba, two companions and Kurobane'],
+    ['assets/season-summer.jpg', 'The lanterns of Obon', 'The village on an Obon night, lanterns lit, your shiba and friends beside Kurobane']
   ];
   var scene = document.getElementById('scene'), caption = document.getElementById('scene-caption');
   var buttons = document.querySelectorAll('#seasons .season');
@@ -408,6 +412,16 @@ Watch the trailer · 44s</span>
     psst.hidden = awake; bubble.hidden = !awake;
     boop.setAttribute('aria-pressed', awake ? 'true' : 'false');
   });
+  var lightbox = document.getElementById('lightbox'), big = document.getElementById('lightbox-img');
+  if (lightbox.showModal) {
+    document.querySelectorAll('.shot').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        big.src = a.href; big.alt = a.querySelector('img').alt; lightbox.showModal();
+      });
+    });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.close(); });
+  }
   var play = document.getElementById('trailer-play');
   play.addEventListener('click', function (e) {
     e.preventDefault();
