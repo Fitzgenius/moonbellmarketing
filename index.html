@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shiba and the Moon Bell · A Cosy Shiba Inu Story RPG</title>
+<meta name="description" content="A cosy story RPG about a small shiba inu and a big mountain. Make friends with yokai, win turn-based fights and find every ending. Chapters 1 and 2 are free to play in your browser.">
+<meta name="theme-color" content="#121831">
+<link rel="canonical" href="https://shibaandthemoonbell.com/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Shiba and the Moon Bell">
+<meta property="og:title" content="Shiba and the Moon Bell · A Cosy Shiba Inu Story RPG">
+<meta property="og:description" content="A cosy story RPG about a small dog and a big mountain. Chapters 1 and 2 are free to play in your browser.">
+<meta property="og:url" content="https://shibaandthemoonbell.com/">
+<meta property="og:image" content="https://shibaandthemoonbell.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A red shiba in a blue scarf under the full moon, beside a persimmon tree">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&amp;family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#121831}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+a{color:#f2902f;text-underline-offset:.2em}a:hover{color:#ffb469}
+a:focus-visible,button:focus-visible{outline:3px solid #f6c492;outline-offset:3px}
+@keyframes hop{50%{transform:translateY(-5px)}}
+@keyframes glow{50%{box-shadow:0 0 110px rgba(241,232,214,.5)}}
+.hop{animation:hop 1.2s ease-in-out infinite}
+.glow{animation:glow 2.4s ease-in-out infinite}
+.season{font:inherit;cursor:pointer;min-height:48px;padding:10px 24px;border-radius:999px;border:1px solid rgba(241,232,214,.3);background:transparent;color:#f1e8d6}
+.season[aria-pressed="true"]{font-weight:700;border-color:#f2902f;background:#f2902f;color:#1a1408}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.hop,.glow{animation:none}}
+</style>
+</head>
+<body>
+<div style="background-color: #121831; background-image: radial-gradient(circle at 12% 3%, rgba(241,232,214,.5) 0 1.5px, transparent 2px), radial-gradient(circle at 31% 1.2%, rgba(241,232,214,.35) 0 1px, transparent 1.5px), radial-gradient(circle at 58% 2.4%, rgba(241,232,214,.4) 0 1.5px, transparent 2px), radial-gradient(circle at 83% 0.8%, rgba(241,232,214,.5) 0 1px, transparent 1.5px), radial-gradient(circle at 94% 4.2%, rgba(241,232,214,.3) 0 1.5px, transparent 2px), radial-gradient(circle at 5% 6%, rgba(241,232,214,.3) 0 1px, transparent 1.5px), radial-gradient(circle at 46% 5.5%, rgba(241,232,214,.3) 0 1px, transparent 1.5px); color: #f1e8d6; font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Trebuchet MS', system-ui, sans-serif; font-size: 18px; line-height: 1.65">
+
+<!-- Nav -->
+<header style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #f1e8d6">
+<img src="assets/logo-on-dark.png" alt="" style="width: 48px; height: auto; display: block">
+<span style="font-family: 'Kaisei Decol', 'Hiragino Mincho ProN', Georgia, serif; font-weight: 700; font-size: 20px; line-height: 1.15">Shiba and <span style="color: #f6c492">the Moon Bell</span></span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 16px">
+<a href="#story" style="color: #f1e8d6; text-decoration: none; padding: 10px 0">Story</a>
+<a href="#features" style="color: #f1e8d6; text-decoration: none; padding: 10px 0">The game</a>
+<a href="#sagas" style="color: #f1e8d6; text-decoration: none; padding: 10px 0">Sagas</a>
+<a href="#price" style="color: #f1e8d6; text-decoration: none; padding: 10px 0">Price</a>
+<a href="https://sheebpg.com/press/" style="color: #f1e8d6; text-decoration: none; padding: 10px 0">Press</a>
+<a href="https://sheebpg.com" style="background: #f2902f; color: #1a1408; font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: 10px; min-height: 24px">Play free</a>
+</nav>
+</header>
+
+<!-- Hero -->
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 88px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 56px">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; color: #c9d98a; font-size: 16px; letter-spacing: .04em">A cosy story RPG, played in your browser</p>
+<h1 style="margin: 0; font-family: 'Kaisei Decol', 'Hiragino Mincho ProN', Georgia, serif; font-weight: 700; font-size: clamp(44px, 6.4vw, 84px); line-height: 1.05; text-wrap: balance">Shiba and <span style="color: #f6c492">the Moon Bell</span></h1>
+<p style="margin: 0; font-size: 22px; line-height: 1.5; color: #ddd6c6; max-width: 30em">The Moon Bell on Mount Kasumi has gone silent, and fog is creeping into Hinata Village. Name your shiba, pick a scarf, and start climbing.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+<a href="https://sheebpg.com" style="background: #f2902f; color: #1a1408; font-weight: 700; font-size: 20px; text-decoration: none; padding: 16px 32px; border-radius: 12px">Play chapters 1 and 2 free</a>
+<a href="#trailer" style="display: flex; align-items: center; gap: 10px; color: #f1e8d6; font-size: 18px; text-decoration: none; padding: 15px 24px; border-radius: 12px; border: 1px solid rgba(241,232,214,.3)">
+<svg aria-hidden="true" width="14" height="16" viewBox="0 0 14 16"><path d="M1 1.5v13l12-6.5z" fill="#f1e8d6"></path></svg>
+Watch the trailer</a>
+</div>
+<p style="margin: 0; color: #aab0c2; font-size: 16px">No account, nothing to install. Works on desktop and phone.</p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0">
+<img src="assets/hero.jpg" alt="A red shiba in a blue scarf sits on a hill under the full moon. A speech bubble says Boop!" style="display: block; width: 100%; height: auto; aspect-ratio: 870 / 690; object-fit: cover; border-radius: 24px; border: 1px solid rgba(241,232,214,.16); box-shadow: 0 30px 80px rgba(5,8,22,.6)">
+</div>
+</section>
+
+<!-- Facts -->
+<section aria-label="The game in numbers" style="border-top: 1px solid rgba(241,232,214,.16); border-bottom: 1px solid rgba(241,232,214,.16); background: #1b2440">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 24px 32px">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="flex: none; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; border: 3px solid #f0695c; outline: 1px solid #f0695c; outline-offset: 4px; color: #f0695c; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1; transform: rotate(-6deg)">9</span>
+<span style="color: #ddd6c6; font-size: 17px; line-height: 1.4">chapters across two sagas</span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="flex: none; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; border: 3px solid #f0695c; outline: 1px solid #f0695c; outline-offset: 4px; color: #f0695c; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1; transform: rotate(4deg)">26</span>
+<span style="color: #ddd6c6; font-size: 17px; line-height: 1.4">endings to stamp in your book</span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="flex: none; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; border: 3px solid #f0695c; outline: 1px solid #f0695c; outline-offset: 4px; color: #f0695c; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1; transform: rotate(-3deg)">7</span>
+<span style="color: #ddd6c6; font-size: 17px; line-height: 1.4">companions to befriend</span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="flex: none; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; border: 3px solid #f0695c; outline: 1px solid #f0695c; outline-offset: 4px; color: #f0695c; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1; transform: rotate(7deg)">2</span>
+<span style="color: #ddd6c6; font-size: 17px; line-height: 1.4">chapters free, no sign-up</span>
+</div>
+</div>
+</section>
+
+<!-- Story -->
+<section id="story" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 64px">
+<div style="flex: 1.2 1 460px; min-width: 0">
+<img loading="lazy" decoding="async" src="assets/shot-grandma-ume.jpg" alt="Screenshot: Grandma Ume asks your shiba whether they heard the bell not ring, in Hinata Village at night" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 16px; border: 1px solid rgba(241,232,214,.16)">
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">One small shiba. One very big mountain.</h2>
+<p style="margin: 0; color: #ddd6c6">Every chapter branches. What you say, who you befriend and what you notice changes how it ends, and later chapters remember what you chose earlier.</p>
+<p style="margin: 0; color: #ddd6c6">Along the way you meet a sulky crow tengu, a moon rabbit, the Snow Lady and a thousand-year-old cherry tree that won't wake up.</p>
+</div>
+</section>
+
+<!-- A year in Hinata: live stage -->
+<section id="year" style="background: #1b2440; border-top: 1px solid rgba(241,232,214,.16); border-bottom: 1px solid rgba(241,232,214,.16)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">One year in a tiny mountain village</h2>
+<p style="margin: 0; color: #ddd6c6; max-width: 40em">Every scene is a paper theatre: hand-drawn layers, lit and moved in 3D in your browser. Pick a season.</p>
+<div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(241,232,214,.16); background: #121831">
+<img loading="lazy" decoding="async" id="scene" src="assets/bg_village.webp" alt="Hinata Village on an autumn night: red lanterns, a full moon and fog under Mount Kasumi" width="960" height="432" style="display: block; width: 100%; height: auto; aspect-ratio: 960 / 432; object-fit: cover">
+<img loading="lazy" decoding="async" class="hop" src="assets/shiba-happy.svg" alt="" style="position: absolute; left: 24%; bottom: 0; height: 50%; width: auto">
+<p id="scene-caption" aria-live="polite" style="position: absolute; right: 20px; bottom: 16px; margin: 0; background: #f1e8d6; color: #1d1714; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 18px; padding: 6px 16px; border-radius: 12px">The autumn moon festival</p>
+</div>
+<div id="seasons" role="group" aria-label="Season" style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" class="season" aria-pressed="true" data-i="0">Autumn</button>
+<button type="button" class="season" aria-pressed="false" data-i="1">Winter</button>
+<button type="button" class="season" aria-pressed="false" data-i="2">Spring</button>
+<button type="button" class="season" aria-pressed="false" data-i="3">Summer</button>
+<button type="button" class="season" aria-pressed="false" data-i="4">Obon</button>
+</div>
+</div>
+</section>
+
+<!-- Cast -->
+<section id="cast" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Friends, foxes and one very persuasive tanuki</h2>
+<p style="margin: 0 0 20px; color: #ddd6c6; max-width: 40em">Meet the neighbours of Hinata Village. One companion fights beside you at a time, each with their own perk.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/ume.svg" alt="Grandma Ume, an elderly shiba in a purple scarf" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Grandma Ume</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Village elder</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">The first to notice the bell did not ring.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/mochi.svg" alt="Mochi, a fluffy cream puppy in a teal scarf" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Mochi</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · Support</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Loyal. Once a fight, shoves you clear of a blow that would knock you out.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/kitsune.svg" alt="Kasumi, a white fox with red-tipped tails" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Kasumi</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · Fire</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">A kitsune. Her fox wisdom brings Moon Howl round sooner.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/monkey.svg" alt="Saru, a snow monkey steaming gently" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Saru</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · Ice</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Hot-spring fur. You can&#39;t be chilled while Saru is with you.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/tanuki.svg" alt="Bunbuku, a tanuki in a straw hat" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Bunbuku</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · Trickster</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">A shape-shifter. The first attack aimed at you hits a decoy instead.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/otter.svg" alt="Nagi, an otter in a checked jacket" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Nagi</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Companion · River</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">River eyes. Foes can&#39;t pinch your treats.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/ponta.svg" alt="Ponta, a tanuki carrying a shop on his back" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Ponta</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Travelling shop</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Sells snacks and upgrades for treats, wherever you stop to rest.</p>
+</article>
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 6px">
+<img loading="lazy" decoding="async" src="assets/kurobane.svg" alt="Kurobane, a red-faced crow tengu with black wings" style="display: block; width: 100%; height: 170px; object-fit: contain">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.2">Kurobane</h3>
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .04em">Crow tengu</p>
+<p style="margin: 0; color: #ddd6c6; font-size: 16px; line-height: 1.55">Sulky. Happens to have a spare feather fan.</p>
+</article>
+</div>
+</section>
+
+<!-- Features -->
+<section id="features" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 104px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; max-width: 16em; text-wrap: balance">Bite, Bark and Zoomies</h2>
+<ul aria-label="Your moves" style="margin: -20px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px">
+<li style="display: flex; align-items: center; gap: 10px; background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 14px; padding: 8px 18px 8px 10px"><img loading="lazy" decoding="async" src="assets/ic_act_bite.webp" alt="" style="width: 44px; height: 44px; display: block"><span style="font-weight: 700">Bite</span></li>
+<li style="display: flex; align-items: center; gap: 10px; background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 14px; padding: 8px 18px 8px 10px"><img loading="lazy" decoding="async" src="assets/ic_act_bark.webp" alt="" style="width: 44px; height: 44px; display: block"><span style="font-weight: 700">Bark</span></li>
+<li style="display: flex; align-items: center; gap: 10px; background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 14px; padding: 8px 18px 8px 10px"><img loading="lazy" decoding="async" src="assets/ic_act_zoom.webp" alt="" style="width: 44px; height: 44px; display: block"><span style="font-weight: 700">Zoomies</span></li>
+<li style="display: flex; align-items: center; gap: 10px; background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 14px; padding: 8px 18px 8px 10px"><img loading="lazy" decoding="async" src="assets/ic_act_howl.webp" alt="" style="width: 44px; height: 44px; display: block"><span style="font-weight: 700">Moon Howl</span></li>
+</ul>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 32px">
+
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" decoding="async" src="assets/shot-white-fox-boss.jpg" alt="Screenshot: a turn-based fight against the White Fox in the snow, with Bite, Bark and Zoomies on the move bar" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover">
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.2; color: #f6c492">Turn-based fights with yokai</h3>
+<p style="margin: 0; color: #ddd6c6">Bite, Bark to stun, and dodge the big attacks with Zoomies. Fill your spirit meter and finish with a Moon Howl.</p>
+</div>
+</article>
+
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" decoding="async" src="assets/canva-stampbook.jpg" alt="A shiba beside an open stamp book lit by a lantern, a few red stamps already collected" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover">
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.2; color: #f6c492">Choices that matter</h3>
+<p style="margin: 0; color: #ddd6c6">26 endings so far, plus battle feats, all collected in a stamp book. Stuck on one? Trade treats for a hint.</p>
+</div>
+</article>
+
+<article style="background: #1b2440; border: 1px solid rgba(241,232,214,.16); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" decoding="async" src="assets/canva-scarves.jpg" alt="Four shibas in a row wearing teal, blue, purple and yellow scarves" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover">
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.2; color: #f6c492">Your dog, your way</h3>
+<p style="margin: 0; color: #ddd6c6">Name the hero after your own dog. Four coats and a wardrobe of scarves, some earned from the stamp book and some sold by Ponta the tanuki.</p>
+</div>
+</article>
+
+</div>
+<p style="margin: 0; color: #aab0c2; max-width: 46em; display: flex; align-items: center; gap: 14px"><img loading="lazy" decoding="async" src="assets/ic_onigiri.webp" alt="" style="width: 44px; height: 44px; flex: none"><span>Potions? No. Onigiri. And it&#39;s kind to players: it saves as you go, fights in progress included. If a fight knocks you out twice, it gets a little easier.</span></p>
+</section>
+
+<!-- Sagas -->
+
+
+<!-- Trailer and screenshots -->
+<section id="sagas" style="background: #1b2440; border-top: 1px solid rgba(241,232,214,.16); border-bottom: 1px solid rgba(241,232,214,.16)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Two sagas so far</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 40px 56px">
+
+<article style="display: flex; flex-direction: column; gap: 20px">
+<img loading="lazy" decoding="async" src="assets/shot-cherry-blossom.jpg" alt="Screenshot: the village square under cherry blossom, with your shiba, two companions and a crow tengu" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; border: 1px solid rgba(241,232,214,.16)">
+<p style="margin: 0; color: #c9d98a; font-size: 15px; letter-spacing: .08em; text-transform: uppercase">Saga I · Complete</p>
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 32px; line-height: 1.2">A Year in Hinata</h3>
+<p style="margin: 0; color: #ddd6c6">Autumn moon, New Year snow, spring cherry and summer stars: one year with a shiba in Hinata Village.</p>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 8px 24px; color: #ddd6c6; font-size: 17px">
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">1</span><span>The Moon Bell <span style="color: #c9d98a">· free</span></span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">2</span><span>The Fog Peddlers <span style="color: #c9d98a">· free</span></span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">3</span><span>The Moon Rabbit</span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">4</span><span>The Snow Lady</span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">5</span><span>The Sleeping Cherry</span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">6</span><span>The Star Festival</span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">7</span><span>The Lantern Road</span></li>
+</ol>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 20px">
+<img loading="lazy" decoding="async" src="assets/canva-road.jpg" alt="A shiba and a tanuki seen from behind, looking down a lantern-lit road through the hills at night" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; border: 1px solid rgba(241,232,214,.16)">
+<p style="margin: 0; color: #f6c492; font-size: 15px; letter-spacing: .08em; text-transform: uppercase">Saga II · New chapters arriving</p>
+<h3 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 32px; line-height: 1.2">The Road to Edo</h3>
+<p style="margin: 0; color: #ddd6c6">Down the old highway from Hinata to Edo, relighting the lantern of every post town on the way.</p>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 8px 24px; color: #ddd6c6; font-size: 17px">
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">1</span><span>The Dark Inn</span></li>
+<li style="display: flex; gap: 12px"><span style="color: #f6c492; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">2</span><span>The River With No Bridge</span></li>
+<li style="display: flex; gap: 12px; color: #aab0c2"><span style="font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; min-width: 1em">3</span><span>More on the way</span></li>
+</ol>
+</article>
+
+</div>
+</div>
+</section><section id="trailer" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 32px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Watch it in motion</h2>
+<div id="trailer-frame" style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(241,232,214,.16); aspect-ratio: 16 / 9; background: #0b1026">
+<a id="trailer-play" href="https://www.youtube.com/watch?v=Mu14LQlXHLg" aria-label="Watch the trailer on YouTube, 44 seconds" style="display: block; height: 100%">
+<img loading="lazy" decoding="async" src="assets/canva-lantern.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<span style="position: absolute; left: 32px; bottom: 32px; display: flex; align-items: center; gap: 14px; background: #f2902f; color: #1a1408; font-weight: 700; font-size: 20px; padding: 14px 26px; border-radius: 12px">
+<svg aria-hidden="true" width="16" height="18" viewBox="0 0 14 16"><path d="M1 1.5v13l12-6.5z" fill="#1a1408"></path></svg>
+Watch the trailer · 44s</span>
+</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
+<img loading="lazy" decoding="async" src="assets/shot-tanuki-bandit.jpg" alt="Screenshot: a tanuki bandit in a straw hat blocks the shrine steps" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
+<img loading="lazy" decoding="async" src="assets/shot-new-year-snow.jpg" alt="Screenshot: Kurobane the crow tengu in the snowy village at New Year" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
+<img loading="lazy" decoding="async" src="assets/shot-snow-fight.jpg" alt="Screenshot: a fight against a Whirlwind Weasel in a snowy pine forest" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
+<img loading="lazy" decoding="async" src="assets/shot-obon-festival.jpg" alt="Screenshot: the village at night during the Obon festival, lanterns strung overhead" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid rgba(241,232,214,.16)">
+</div>
+</section>
+
+<!-- Price -->
+<section id="price" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 104px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Start free. Pay once if you love it.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 32px">
+
+<div style="border: 1px solid rgba(241,232,214,.16); border-radius: 20px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 500; color: #c9d98a">Chapters 1 and 2</h3>
+<p style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 56px; line-height: 1">Free</p>
+<ul style="margin: 0; padding-left: 1.2em; color: #ddd6c6; display: flex; flex-direction: column; gap: 6px">
+<li>No account needed</li>
+<li>Nothing to install</li>
+<li>Your save stays in your browser</li>
+</ul>
+</div>
+
+<div style="background: #1b2440; border: 1px solid #f2902f; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 500; color: #f6c492">The full game</h3>
+<p style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 56px; line-height: 1">£3.49 <span style="font-family: 'Zen Maru Gothic', system-ui, sans-serif; font-weight: 400; font-size: 18px; color: #aab0c2">once · $3.49 · €3.49</span></p>
+<ul style="margin: 0; padding-left: 1.2em; color: #ddd6c6; display: flex; flex-direction: column; gap: 6px">
+<li>Chapter 3 onwards, in both sagas</li>
+<li>Every chapter added later is included</li>
+<li>No ads, no subscription</li>
+<li>Cloud saves, so you can carry on from another device</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- Closing scene -->
+<section style="position: relative; overflow: hidden; border-top: 1px solid rgba(241,232,214,.16); background: #1a2350">
+<div class="glow" aria-hidden="true" style="position: absolute; right: 9%; top: 64px; width: clamp(110px, 15vw, 210px); aspect-ratio: 1; border-radius: 50%; background: #f1e8d6; box-shadow: 0 0 80px rgba(241,232,214,.35)"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 96px 24px 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center">
+<h2 style="margin: 0; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Someone has to climb.</h2>
+<a href="https://sheebpg.com" style="background: #f2902f; color: #1a1408; font-weight: 700; font-size: 22px; text-decoration: none; padding: 18px 56px; border-radius: 12px">Begin</a>
+<p style="margin: 0; color: #c9d98a">Chapters 1 and 2 are free. No account needed.</p>
+<div style="position: relative; z-index: 1; margin: 24px 0 -50px">
+<button id="boop" type="button" aria-label="Boop the shiba" aria-pressed="false" style="display: block; background: none; border: 0; padding: 0; cursor: pointer">
+<img loading="lazy" decoding="async" id="pup" src="assets/shiba-sleepy.svg" alt="A shiba asleep on the hill" style="display: block; height: 230px; width: auto">
+</button>
+<p id="psst" style="position: absolute; left: 100%; top: 40px; margin: 0; white-space: nowrap; color: #aab0c2; font-size: 15px">Psst. Boop him.</p>
+<p id="bubble" hidden style="position: absolute; left: 88%; top: 20px; margin: 0; white-space: nowrap; background: #f1e8d6; color: #1d1714; font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 22px; padding: 6px 18px; border-radius: 14px; box-shadow: 0 8px 24px rgba(5,8,22,.4)">Boop!</p>
+</div>
+</div>
+<svg aria-hidden="true" viewBox="0 0 1440 110" preserveAspectRatio="none" style="display: block; width: 100%; height: 110px"><path d="M0 110 V62 Q360 0 720 22 T1440 54 V110Z" fill="#0b1026"></path></svg>
+</section>
+
+<!-- Footer -->
+<footer style="background: #0b1026">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 40px 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #f1e8d6">
+<img loading="lazy" decoding="async" src="assets/logo-on-dark.png" alt="" style="width: 56px; height: auto; display: block">
+<span style="font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 22px; line-height: 1.15">Shiba and <span style="color: #f6c492">the Moon Bell</span></span>
+</a>
+<p style="margin: 0; color: #aab0c2; font-size: 16px">A cosy story about a small dog and a big mountain.</p>
+</div>
+<form id="news" novalidate style="display: flex; flex-direction: column; gap: 10px">
+<label for="news-email" style="font-family: 'Kaisei Decol', Georgia, serif; font-weight: 700; font-size: 20px; color: #f1e8d6; display: flex; align-items: center; gap: 10px"><img loading="lazy" decoding="async" src="assets/ic_lantern.webp" alt="" style="width: 32px; height: 32px">Want an email when the next chapter is out?</label>
+<div id="news-row" style="display: flex; flex-wrap: wrap; gap: 10px">
+<input id="news-email" name="email" type="email" required maxlength="254" spellcheck="false" placeholder="you@example.com" autocomplete="email" style="flex: 1 1 180px; min-width: 0; min-height: 48px; font: inherit; font-size: 16px; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(241,232,214,.3); background: #121831; color: #f1e8d6">
+<button id="news-btn" type="submit" style="font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; min-height: 48px; padding: 10px 20px; border-radius: 10px; border: 0; background: #f2902f; color: #1a1408">Email me</button>
+</div>
+<p id="news-help" style="margin: 0; color: #aab0c2; font-size: 14px; line-height: 1.5">Only about new chapters, a few times a year. Unsubscribe any time. <a href="https://sheebpg.com/privacy.html#news" style="color: #aab0c2">Privacy</a></p>
+<p id="news-msg" role="status" aria-live="polite" hidden style="margin: 0; color: #f6c492; font-size: 15px; line-height: 1.5"></p>
+</form>
+<nav aria-label="The game" style="display: flex; flex-direction: column; gap: 4px; font-size: 16px">
+<h3 style="margin: 0 0 6px; font-size: 14px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #aab0c2">The game</h3>
+<a href="https://sheebpg.com" style="color: #f1e8d6; padding: 6px 0">Play free</a>
+<a href="#sagas" style="color: #f1e8d6; padding: 6px 0">Sagas</a>
+<a href="#trailer" style="color: #f1e8d6; padding: 6px 0">Trailer</a>
+</nav>
+<nav aria-label="Help and press" style="display: flex; flex-direction: column; gap: 4px; font-size: 16px">
+<h3 style="margin: 0 0 6px; font-size: 14px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #aab0c2">Help and press</h3>
+<a href="https://sheebpg.com/press/" style="color: #f1e8d6; padding: 6px 0">Press kit</a>
+<a href="mailto:hello@sheebpg.com" style="color: #f1e8d6; padding: 6px 0">hello@sheebpg.com</a>
+</nav>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px 24px 36px; border-top: 1px solid rgba(241,232,214,.16); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; color: #aab0c2; font-size: 15px">
+<span>Made by FGMedia, a one-person studio in Peterborough, UK</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 24px"><a href="https://sheebpg.com/privacy.html" style="color: #aab0c2">Privacy</a><a href="https://sheebpg.com/terms.html" style="color: #aab0c2">Terms &amp; refunds</a></span>
+</div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var scenes = [
+    ['assets/bg_village.webp', 'The autumn moon festival', 'Hinata Village on an autumn night: red lanterns, a full moon and fog under Mount Kasumi'],
+    ['assets/bg_village_snow.webp', 'New Year snow', 'The village under falling snow, roofs white, the mountain capped'],
+    ['assets/bg_hanami.webp', 'Spring cherry blossom', 'A huge pink cherry tree on a green hill at dusk, petals drifting'],
+    ['assets/bg_star_river.webp', 'The summer star festival', 'A bamboo hung with paper wishes under a river of stars'],
+    ['assets/bg_obon.webp', 'The lanterns of Obon', 'The village at dusk with white lanterns overhead and welcome fires at every door']
+  ];
+  var scene = document.getElementById('scene'), caption = document.getElementById('scene-caption');
+  var buttons = document.querySelectorAll('.season');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var s = scenes[+b.dataset.i];
+      scene.src = s[0]; scene.alt = s[2]; caption.textContent = s[1];
+      buttons.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+    });
+  });
+  var boop = document.getElementById('boop'), pup = document.getElementById('pup');
+  var psst = document.getElementById('psst'), bubble = document.getElementById('bubble'), awake = false;
+  boop.addEventListener('click', function () {
+    awake = !awake;
+    pup.src = awake ? 'assets/shiba-excited.svg' : 'assets/shiba-sleepy.svg';
+    pup.alt = awake ? 'The shiba, wide awake and delighted' : 'A shiba asleep on the hill';
+    pup.classList.toggle('hop', awake);
+    psst.hidden = awake; bubble.hidden = !awake;
+    boop.setAttribute('aria-pressed', awake ? 'true' : 'false');
+  });
+  var play = document.getElementById('trailer-play');
+  play.addEventListener('click', function (e) {
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/Mu14LQlXHLg?autoplay=1&rel=0';
+    f.title = 'Shiba and the Moon Bell: official trailer';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.style.cssText = 'display:block;width:100%;height:100%;border:0';
+    document.getElementById('trailer-frame').replaceChildren(f);
+  });
+  // The new-chapter mailing list is the game's own (sheebpg.com/api/news.php): it emails a confirmation link.
+  var form = document.getElementById('news'), msg = document.getElementById('news-msg'), btn = document.getElementById('news-btn');
+  var say = function (text) { msg.textContent = text; msg.hidden = false; };
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var addr = form.email.value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(addr)) { say('Please enter your email address.'); return; }
+    btn.disabled = true; btn.textContent = 'Sending...'; msg.hidden = true;
+    fetch('https://sheebpg.com/api/news.php', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'subscribe', email: addr, from: 'site', src: 'shibaandthemoonbell.com' })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (!r.ok) throw new Error(d.error || d.message || 'Something went wrong. Please try again in a moment.');
+      });
+    }).then(function () {
+      document.getElementById('news-row').hidden = true; document.getElementById('news-help').hidden = true;
+      say("Nearly there! We've emailed " + addr + " a link. Open it to confirm, and you'll hear from us when the next chapter is out.");
+    }).catch(function (err) {
+      btn.disabled = false; btn.textContent = 'Email me';
+      say(err && err.message && !/fetch|network/i.test(err.message) ? err.message : "We couldn't reach the sign-up just now. Please try again in a moment.");
+    });
+  });
+})();
+</script>
+</body>
+</html>
