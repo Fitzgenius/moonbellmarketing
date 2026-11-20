@@ -10,3 +10,6 @@ so every Play button here links there.
 - Hosted on the Plesk VPS as its own domain, with the files in `httpdocs`.
 - The footer sign-up posts to the game's mailing-list endpoint, `https://sheebpg.com/api/news.php`, which allows this
   site's origin (see `allow_site_origin` in the game repo's `server/api/news.php`).
+- Google Analytics uses the game's measurement ID and loads only after the visitor says yes (the strip at the
+  bottom; the footer's Analytics button changes the answer). `google77e3bd471f7de7db.html` is the Search Console
+  verification file and has to stay in the web root.

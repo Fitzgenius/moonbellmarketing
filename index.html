@@ -365,11 +365,21 @@ Watch the trailer · 44s</span>
 </div>
 <div style="max-width: 1200px; margin: 0 auto; padding: 20px 24px 36px; border-top: 1px solid rgba(241,232,214,.16); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; color: #aab0c2; font-size: 15px">
 <span>Made by <a href="https://fitzgenius.com" style="color: #aab0c2">FGMedia</a>, a one-person studio in Peterborough, UK</span>
-<span style="display: flex; flex-wrap: wrap; gap: 8px 24px"><a href="https://sheebpg.com/privacy.html" style="color: #aab0c2">Privacy</a><a href="https://sheebpg.com/terms.html" style="color: #aab0c2">Terms &amp; refunds</a></span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px 24px"><button id="analytics-toggle" type="button" aria-pressed="false" style="font: inherit; color: #aab0c2; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .2em">Analytics: off</button><a href="https://sheebpg.com/privacy.html" style="color: #aab0c2">Privacy</a><a href="https://sheebpg.com/terms.html" style="color: #aab0c2">Terms &amp; refunds</a></span>
 </div>
 </footer>
 
 </div>
+<div id="consent" hidden role="region" aria-label="Analytics" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: #1b2440; border-top: 1px solid rgba(241,232,214,.3); color: #f1e8d6; font-family: 'Zen Maru Gothic', 'Trebuchet MS', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<p style="margin: 0; flex: 1 1 320px">Can we use Google Analytics to see how people find the game? Nothing loads unless you say yes. <a href="https://sheebpg.com/privacy.html#analytics" style="color: #f6c492">Privacy</a></p>
+<div style="display: flex; gap: 10px">
+<button id="consent-yes" type="button" class="season" aria-pressed="true">Allow</button>
+<button id="consent-no" type="button" class="season">No thanks</button>
+</div>
+</div>
+</div>
+
 <script>
 (function () {
   var scenes = [
@@ -380,7 +390,7 @@ Watch the trailer · 44s</span>
     ['assets/bg_obon.webp', 'The lanterns of Obon', 'The village at dusk with white lanterns overhead and welcome fires at every door']
   ];
   var scene = document.getElementById('scene'), caption = document.getElementById('scene-caption');
-  var buttons = document.querySelectorAll('.season');
+  var buttons = document.querySelectorAll('#seasons .season');
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
       var s = scenes[+b.dataset.i];
@@ -432,6 +442,43 @@ Watch the trailer · 44s</span>
       say(err && err.message && !/fetch|network/i.test(err.message) ? err.message : "We couldn't reach the sign-up just now. Please try again in a moment.");
     });
   });
+  // Google Analytics, only after a yes (the same rule as the game). The answer is kept in this browser, and the
+  // footer's Analytics button changes it. The measurement ID is the game's, so a visit that goes on to
+  // sheebpg.com reads as one journey (cross-domain linking is set on the GA side).
+  var GA_ID = 'G-PXQSHF2LHT', KEY = 'moonbell-analytics';
+  var consentBar = document.getElementById('consent'), toggle = document.getElementById('analytics-toggle');
+  var answer = null; try { answer = localStorage.getItem(KEY); } catch (e) {}
+  var gaLoaded = false;
+  function loadGa() {
+    window['ga-disable-' + GA_ID] = false;
+    if (gaLoaded) return; gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID, { linker: { domains: ['shibaandthemoonbell.com', 'sheebpg.com'] } });
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s);
+  }
+  function unloadGa() {
+    window['ga-disable-' + GA_ID] = true;
+    var host = location.hostname.replace(/^www\./, '');
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (/^_ga(_|$)/.test(name)) ['', host, '.' + host].forEach(function (d) {
+        document.cookie = name + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+      });
+    });
+  }
+  function setAnswer(yes) {
+    answer = yes ? 'yes' : 'no'; try { localStorage.setItem(KEY, answer); } catch (e) {}
+    consentBar.hidden = true; showToggle(); if (yes) loadGa(); else unloadGa();
+  }
+  function showToggle() { toggle.textContent = 'Analytics: ' + (answer === 'yes' ? 'on' : 'off'); toggle.setAttribute('aria-pressed', answer === 'yes' ? 'true' : 'false'); }
+  document.getElementById('consent-yes').addEventListener('click', function () { setAnswer(true); });
+  document.getElementById('consent-no').addEventListener('click', function () { setAnswer(false); });
+  toggle.addEventListener('click', function () { setAnswer(answer !== 'yes'); });
+  showToggle();
+  if (answer === 'yes') loadGa(); else if (answer !== 'no') consentBar.hidden = false;
 })();
 </script>
 </body>
