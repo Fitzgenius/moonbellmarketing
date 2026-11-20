@@ -6,7 +6,8 @@ so every Play button here links there.
 
 - Art comes from the game repo (`sheebpg`): press-kit screenshots, renders captured from Storybook's Scenes > Playground at 2x (the hero and the
   four season stills), sprites rendered from `src/art` and move icons from `src/art/icons`. The trailer is the YouTube upload.
-- The three `canva-*.jpg` images are crops of finished social posts. Swap in clean exports from Canva when you can.
+- `canva-hinata.jpg` is a Canva-generated image (media `MAHbf5nBCzo`). The other three `canva-*.jpg` images are
+  crops of finished social posts. Swap in clean exports from Canva when you can.
   `trailer-poster.jpg` is a Canva-generated image (media `MAHbfqRTlWY`, 2720 x 1536 in Canva); the copy here is a
   1378 px screen capture of it.
 - Hosted on the Plesk VPS as its own domain, with the files in `httpdocs`.
